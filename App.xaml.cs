@@ -8,7 +8,7 @@ namespace MAUITestAPI
         {
             InitializeComponent();
 
-            MainPage = new NewsHomePage();
+            MainPage = new NavigationPage(new NewsHomePage());
 
         }
     }

@@ -33,4 +33,19 @@ public partial class NewsHomePage : ContentPage
 		}
 		CvNews.ItemsSource = ArticleList;
 	}
+
+    private void CvCategories_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+        var selectedItem = e.CurrentSelection.FirstOrDefault() as categories;
+        if (selectedItem == null) return;
+        Navigation.PushAsync(new NewsListPage(selectedItem));
+        ((CollectionView)sender).SelectedItem = null;
+    }
+
+    private void CvNews_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        var selectedItem = e.CurrentSelection.FirstOrDefault() as Article;
+        if (selectedItem == null) return;
+        Navigation.PushAsync(new NewsDetailsPage(selectedItem));
+        ((CollectionView)sender).SelectedItem = null;
+    }
 }

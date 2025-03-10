@@ -2,11 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUITestAPI.Pages.NewsDetailsPage"
-             Title="NewsDetailsPage">
-    <VerticalStackLayout>
+             Title="News Details">
+    <VerticalStackLayout Margin="20">
+        <Image x:Name="imgArticle" HeightRequest="300"/>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            x:Name="lblTitle"
+            FontSize="Title"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontAttributes="Bold"/>
+        <Label/>
+        <Label/>
+        <Label
+            x:Name="lblContent"
+            FontSize="Body"
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>
